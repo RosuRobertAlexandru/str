@@ -41,7 +41,7 @@ void myPrinter(Node* head)
 	}
 }
 
-void freeME(Node* head)
+struct Node* freeME(Node* head)
 {
 	Node* temp;
 	while (head != NULL)
@@ -51,6 +51,7 @@ void freeME(Node* head)
 		free(temp->info.owner_name);
 		free(temp);
 	}
+return head;
 }
 int main()
 {
@@ -81,7 +82,7 @@ int main()
 		head = insert_start(head, tAccount);
 	}
 	myPrinter(head);
-	freeME(head);
+	head=freeME(head);
 	// parsing the simple list
 
 	// deallocation of the simple list
